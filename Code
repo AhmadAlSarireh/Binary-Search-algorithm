@@ -1,0 +1,28 @@
+import random
+
+def binary_search(search_number, search_list):
+    midpoint_index = int(len(search_list) / 2) + 1
+    if search_number == search_list[midpoint_index]:
+        print("YES")
+        return True
+    elif search_number < search_list[midpoint_index]:
+        for a in range(0, search_list[midpoint_index]):
+            if search_list[a] == search_number:
+                print("YES")
+                return True
+                break
+            if a == search_list[midpoint_index] - 1 and search_list[a] != search_number:
+                print("NO")
+                return False
+    elif search_number > search_list[midpoint_index]:
+        for a in range(search_list[midpoint_index]+ 1, len(search_list)):
+            if search_list[a] == search_number:
+                print("YES")
+                return True
+                break
+            if a == len(search_list) - 1 and search_list[a] != search_number:
+                print("NO")
+                return False
+
+
+binary_search(5, [1,2,3,4,5,6,7,8,9])
